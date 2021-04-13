@@ -1,0 +1,5 @@
+bucket         = "terraform-statelock-dev-bucket"
+key            = "us-east-1/api/api.tfstate"
+dynamodb_table = "terraform-app-dev-statelock"
+region         = "us-east-1"
+profile        = "default"

@@ -390,3 +390,8 @@ variable "app_name" {
   description = "Application Name"
   default     = ""
 }
+
+variable "iam_instance_profile_name" {
+  type        = string
+  default     = ""
+}

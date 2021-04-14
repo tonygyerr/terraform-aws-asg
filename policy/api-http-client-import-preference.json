@@ -1,0 +1,15 @@
+[
+    {
+      "cpu": 256,
+      "essential": true,
+      "image": "api-http-client-import-preference",
+      "memory": 512,
+      "name": "api-http-client-import-preference",
+      "portMappings": [
+        {
+          "containerPort": 2368,
+          "hostPort": 8080
+        }
+      ]
+    }
+  ]

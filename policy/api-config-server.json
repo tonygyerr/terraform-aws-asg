@@ -1,0 +1,15 @@
+[
+  {
+    "cpu": 256,
+    "essential": true,
+    "image": "api-config-server",
+    "memory": 512,
+    "name": "api-config-serv",
+    "portMappings": [
+      {
+        "containerPort": 2368,
+        "hostPort": 8080
+      }
+    ]
+  }
+]

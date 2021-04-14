@@ -1,0 +1,15 @@
+[
+    {
+      "cpu": 256,
+      "essential": true,
+      "image": "api-message-controller",
+      "memory": 512,
+      "name": "api-message-controller",
+      "portMappings": [
+        {
+          "containerPort": 2368,
+          "hostPort": 8080
+        }
+      ]
+    }
+  ]

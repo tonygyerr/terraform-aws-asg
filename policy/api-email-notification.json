@@ -1,0 +1,15 @@
+[
+    {
+      "cpu": 256,
+      "essential": true,
+      "image": "api-email-notification",
+      "memory": 512,
+      "name": "api-email-notif",
+      "portMappings": [
+        {
+          "containerPort": 2368,
+          "hostPort": 8080
+        }
+      ]
+    }
+  ]

@@ -1,0 +1,15 @@
+[
+    {
+      "cpu": 256,
+      "essential": true,
+      "image": "api-process-customer-response",
+      "memory": 512,
+      "name": "api-process-cust-response",
+      "portMappings": [
+        {
+          "containerPort": 2368,
+          "hostPort": 8080
+        }
+      ]
+    }
+  ]

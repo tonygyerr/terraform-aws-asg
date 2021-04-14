@@ -1,0 +1,15 @@
+[
+    {
+      "cpu": 256,
+      "essential": true,
+      "image": "api-voice-notification",
+      "memory": 512,
+      "name": "api-voice-notif",
+      "portMappings": [
+        {
+          "containerPort": 2368,
+          "hostPort": 8080
+        }
+      ]
+    }
+  ]

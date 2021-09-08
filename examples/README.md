@@ -58,3 +58,10 @@ $ terraform apply
   destroy infrastructure only when needed
 $ terraform destroy
 ```
+
+vpc_config = {
+  region            = "us-east-1a"
+  cidr              = "10.0.0.0/16"
+  vpc_id            = "vpc-**************"
+  instance_type     = "t2.xlarge"
+}

@@ -71,5 +71,5 @@ variable "userdata" {
 variable "associate_public_ip_address" {
   description = "Associate the Public IP Address"
   type = bool
-  default = ""
+  default = false
 }

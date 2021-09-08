@@ -128,7 +128,7 @@ variable "iam_database_authentication_enabled" {
 variable "associate_public_ip_address" {
   description = "Associate the Public IP Address"
   type = bool
-  default = ""
+  default = false
 }
 
 variable "vpc_security_group_ids" {

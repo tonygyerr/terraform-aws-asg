@@ -3,6 +3,7 @@ module "asg" {
 
   app_name                = "my-app-name"
   ami                     = "ami-0742b4e673072066f"
+  associate_public_ip_address = true
   aws_key_name            = "my-app-key-app-server"
   instance_type           = "t2.xlarge"
   lb_prv_subnets          = ["10.0.0.144/28", "10.0.0.160/28", "10.0.0.176/28"]

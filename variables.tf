@@ -125,6 +125,12 @@ variable "iam_database_authentication_enabled" {
   default     = false
 }
 
+variable "associate_public_ip_address" {
+  description = "Associate the Public IP Address"
+  type = "bool"
+  default = ""
+}
+
 variable "vpc_security_group_ids" {
   description = "List of VPC security groups to associate"
   default     = []

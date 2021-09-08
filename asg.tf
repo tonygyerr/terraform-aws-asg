@@ -5,7 +5,7 @@ resource "aws_launch_configuration" "api" {
   //iam_instance_profile = "${aws_iam_instance_profile.ecs.name}"
   key_name                    = var.aws_key_name 
   security_groups             = ["${aws_security_group.alb.id}"]
-  user_data                   = "value"
+  user_data                   = var.userdata
   associate_public_ip_address = false
   enable_monitoring           = true
   ebs_optimized               = false

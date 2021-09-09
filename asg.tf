@@ -1,5 +1,5 @@
 resource "aws_launch_configuration" "api" {
-  name                        = "${var.app_name}-aslc-20200411a"
+  name                        = "${var.app_name}-aslc"
   image_id                    = var.ami
   instance_type               = var.vpc_config.instance_type
   //iam_instance_profile = "${aws_iam_instance_profile.ecs.name}"

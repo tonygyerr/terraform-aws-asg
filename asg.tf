@@ -1,6 +1,6 @@
 resource "aws_launch_configuration" "api" {
   count                       = "${var.vpc_config.environment == var.vpc_config.environment ? 1 : 0}"
-  name                        = "${var.app_name}-aslc"
+  name                        = "${var.app_name}-aslc-${count.index}"
   image_id                    = var.ami
   instance_type               = var.vpc_config.instance_type
   //iam_instance_profile = "${aws_iam_instance_profile.ecs.name}"

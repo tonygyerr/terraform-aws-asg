@@ -1,5 +1,6 @@
 module "asg" {
-  source = "git::https://github.com/tonygyerr/terraform-aws-asg.git"
+  # source = "git::https://github.com/tonygyerr/terraform-aws-asg.git"
+  source  = "../"
 
   app_name                = "my-app-name"
   ami                     = "ami-0742b4e673072066f"
@@ -11,5 +12,6 @@ module "asg" {
   userdata                = "userdata/userdata.sh" #data.template_file.user_data.rendered
   vpc_name                = "api-vpc"
   vpc_id                  = "vpc-**************"
+  vpc_config              = var.vpc_config
   vpc_security_group_ids  = [module.api.alb_sg_id]
 }

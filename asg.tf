@@ -42,9 +42,14 @@ resource "aws_autoscaling_group" "api" {
   max_size                  = "${var.ecs["max_size"]}"
   depends_on                = ["aws_launch_configuration.api"]
 
+  # tag {
+  #   key                 = "Name"
+  #   value               = "${var.app_name}-ec2-ecs-asg-${count.index}"
+  #   propagate_at_launch = true
+  # }
+
   tag {
-    key                 = "Name"
-    value               = "${var.app_name}-ec2-ecs-asg-${count.index}"
+    Name       = "${var.app_name}-ec2-ecs-asg-${count.index}"
     propagate_at_launch = true
   }
 

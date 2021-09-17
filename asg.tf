@@ -44,7 +44,7 @@ resource "aws_autoscaling_group" "api" {
 
   tag {
     key                 = "Name"
-    value               = "${var.app_name}-ec2-ecs-asg"
+    value               = "${var.app_name}-ec2-ecs-asg-${count.index}"
     propagate_at_launch = true
   }
 

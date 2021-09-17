@@ -13,4 +13,5 @@ module "asg" {
   vpc_id                  = "vpc-**************"
   vpc_config              = var.vpc_config
   vpc_security_group_ids  = [module.api.alb_sg_id]
+  tags                    = var.tags
 }

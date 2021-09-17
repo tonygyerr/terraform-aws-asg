@@ -21,14 +21,7 @@ variable "tags" {
   type        = "map"
   description = "optional default tags"
 
-  default = {
-    Name       = "api"
-    Owner      = "cloudops@energy.com"
-    CostCenter = "N/A"
-    vpc        = "api-vpc"
-    env        = "prd"
-    project    = "api"
-  }
+  default = {}
 }
 
 variable "aws_region" {

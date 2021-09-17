@@ -3,7 +3,6 @@ resource "aws_launch_configuration" "api" {
   name                        = "${var.app_name}-aslc"
   image_id                    = var.ami
   instance_type               = var.vpc_config.instance_type
-  //iam_instance_profile = "${aws_iam_instance_profile.ecs.name}"
   iam_instance_profile        = var.iam_instance_profile_name
   key_name                    = var.aws_key_name 
   security_groups             = ["${aws_security_group.alb.id}"]
@@ -32,7 +31,7 @@ resource "aws_launch_configuration" "api" {
 
 resource "aws_autoscaling_group" "api" {
   count                     = "${var.vpc_config.environment == var.vpc_config.environment ? 1 : 0}"
-  name                      = "${var.app_name}-ec2-ecs-asg"
+  name                      = "${var.app_name}-ec2--asg"
   vpc_zone_identifier       = var.lb_subnet_ids
   launch_configuration      = "${aws_launch_configuration.api.*.name[count.index]}"
   desired_capacity          = "${var.ecs["desired_capacity"]}"
@@ -44,7 +43,7 @@ resource "aws_autoscaling_group" "api" {
 
   tag {
     key                 = "Name"
-    value               = "${var.app_name}-ec2-ecs-asg-${count.index}"
+    value               = "${var.app_name}-ec2-asg-${count.index}"
     propagate_at_launch = true
   }
 

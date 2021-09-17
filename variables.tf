@@ -16,6 +16,18 @@ variable "lb_prv_subnets" {
   default     = []
 }
 
+variable "name_prefix" {
+  type = string
+  default = ""
+}
+
+variable "asgmachine" {
+  type = string
+  default = "asgmachine"
+}
+
+
+
 variable "ami" {
   type = string
   default = ""
@@ -102,15 +114,7 @@ variable "ecs" {
   description = "(Required) map of variables for ECS"
   type        = "map"
 
-  default = {
-    //instance_type    = "c4.large"
-    instance_type    = "t2.micro"
-    min_size         = 2
-    max_size         = 3
-    desired_capacity = 2
-    health_check_type = "EC2"
-    health_check_grace_period = 300
-  }
+  default = {}
 }
 
 variable "iam_database_authentication_enabled" {

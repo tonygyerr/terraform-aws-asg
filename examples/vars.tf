@@ -24,6 +24,11 @@ variable "tags" {
   default = {}
 }
 
+variable "name_prefix" {
+  type = string
+  default = ""
+}
+
 variable "aws_region" {
   description = "ec2 region for the vpc"
   default     = "us-east-1"

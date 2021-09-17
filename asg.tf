@@ -31,7 +31,7 @@ resource "aws_launch_configuration" "api" {
 
 resource "aws_autoscaling_group" "api" {
   count                     = "${var.vpc_config.environment == var.vpc_config.environment ? 1 : 0}"
-  name                      = "${var.app_name}-ec2--asg"
+  name                      = "${var.app_name}-ec2-asg-${count.index}"
   vpc_zone_identifier       = var.lb_subnet_ids
   launch_configuration      = "${aws_launch_configuration.api.*.name[count.index]}"
   desired_capacity          = "${var.ecs["desired_capacity"]}"

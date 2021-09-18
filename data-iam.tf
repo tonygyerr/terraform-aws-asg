@@ -60,6 +60,5 @@ data "aws_iam_policy_document" "vpc_flow" {
       "logs:CreateLogStream",
       "logs:PutLogEvents",
     ]
-    resources = ["${aws_cloudwatch_log_group.flow_log.arn}"]
   }
 }

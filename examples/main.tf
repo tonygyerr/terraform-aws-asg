@@ -1,5 +1,6 @@
 module "asg" {
-  source = "git::https://github.com/tonygyerr/terraform-aws-asg.git"
+  # source = "git::https://github.com/tonygyerr/terraform-aws-asg.git"
+  source = "../"
 
   app_name                    = "my-app-name"
   ami                         = "ami-0742b4e673072066f"
@@ -29,10 +30,10 @@ module "asg" {
     environment   = "dev"
   }
   tags = {
-    Owner   = "braghouse"
+    Owner   = "my-app"
     env     = "test"
     Region  = "us-east-1"
     project = "brag"
-    Name    = "braghouse-asg"
+    Name    = "my-app-asg"
   }
 }

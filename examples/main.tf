@@ -6,7 +6,6 @@ module "asg" {
   associate_public_ip_address = true
   aws_key_name                = "my-app-key-app-server"
   instance_type               = "t2.xlarge"
-  lb_prv_subnets              = ["10.0.0.144/28", "10.0.0.160/28", "10.0.0.176/28"]
   lb_subnet_ids               = ["subnet-***********", "subnet-00cc***********", "subnet-01f************"]
   name_prefix                 = "ec2-asg"
   userdata                    = "userdata/userdata.sh" #data.template_file.user_data.rendered

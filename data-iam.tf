@@ -64,4 +64,3 @@ data "aws_iam_policy_document" "vpc_flow" {
     resources = ["${aws_cloudwatch_log_group.flow_log.arn}"]
   }
 }
-

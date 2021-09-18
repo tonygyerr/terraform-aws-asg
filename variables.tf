@@ -10,11 +10,17 @@ variable "aws_key_name" {
 #   default     = "api-pub-alb"
 # }
 
-# variable "lb_prv_subnets" {
-#   description = "load balancer private subnets for the vpc"
-#   type        = list(string)
-#   default     = []
-# }
+variable "lb_prv_subnets" {
+  description = "load balancer private subnets for the vpc"
+  type        = list(string)
+  default     = []
+}
+
+variable "lb_pub_subnets" {
+  description = "load balancer public subnets for the vpc"
+  type        = list(string)
+  default     = []
+}
 
 variable "name_prefix" {
   type    = string

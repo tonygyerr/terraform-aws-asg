@@ -15,7 +15,7 @@ resource "aws_cloudwatch_metric_alarm" "ecs_memory_high" {
 
 resource "aws_cloudwatch_metric_alarm" "ecs_memory_low" {
   count               = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
-  alarm_name          = "${var.app_name}-cw-memory-low-low"
+  alarm_name          = "${var.app_name}-cw-memory-low"
   comparison_operator = var.cloud_watch_ml_comparison_operator
   evaluation_periods  = var.cloud_watch_ml_evaluation_periods
   metric_name         = var.cloud_watch_ml_metric_name

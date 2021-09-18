@@ -59,7 +59,6 @@ resource "aws_cloudwatch_metric_alarm" "api-ecs-cpu-scaleout" {
 }
 
 resource "aws_cloudwatch_log_group" "flow_log" {
-  count               = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
   name  = "/aws/asg/${aws_autoscaling_group.api[count.index].name}-cw-flow-log"
   retention_in_days = var.cloud_watch_log_group_retention
 }

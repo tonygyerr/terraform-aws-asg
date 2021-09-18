@@ -1,5 +1,5 @@
 output "cloudwatch_log_arn" {
-  value = aws_cloudwatch_log_group.flow_log[count.index].arn
+  value = aws_cloudwatch_log_group.flow_log.arn
 }
 
 output "asg_sg_id" {

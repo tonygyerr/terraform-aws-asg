@@ -16,6 +16,11 @@ variable "lb_prv_subnets" {
   default     = []
 }
 
+variable "vpc_security_group_ids" {
+  description = "list of security group ids"
+  type        = list
+  default     = []
+}
 
 variable "tags" {
   type        = "map"

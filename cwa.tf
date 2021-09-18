@@ -1,4 +1,4 @@
-resource "aws_cloudwatch_log_group" "api_flow_log" {
+resource "aws_cloudwatch_log_group" "flow_log" {
   name              = "${var.cloud_watch_log_group_name}"
   retention_in_days = "${var.cloud_watch_log_group_retention}"
 }
@@ -15,7 +15,7 @@ resource "aws_cloudwatch_metric_alarm" "ecs_memory_high" {
   threshold           = "${var.cloud_watch_mh_threshold}"
 
   alarm_description = "${var.cloud_watch_mh_description}"
-  alarm_actions     = ["${aws_autoscaling_policy.api_ec2_ecs_asg_scale_in[count.index].arn}"]
+  alarm_actions     = ["${aws_autoscaling_policy.ec2_ecs_asg_scale_in[count.index].arn}"]
 }
 
 resource "aws_cloudwatch_metric_alarm" "ecs_memory_low" {
@@ -30,7 +30,7 @@ resource "aws_cloudwatch_metric_alarm" "ecs_memory_low" {
   threshold           = "${var.cloud_watch_ml_threshold}"
 
   alarm_description = "${var.cloud_watch_ml_description}"
-  alarm_actions     = ["${aws_autoscaling_policy.api_ec2_ecs_asg_scale_out[count.index].arn}"]
+  alarm_actions     = ["${aws_autoscaling_policy.ec2_ecs_asg_scale_out[count.index].arn}"]
 }
 
 resource "aws_cloudwatch_metric_alarm" "api-ecs-cpu-scale-in" {
@@ -45,7 +45,7 @@ resource "aws_cloudwatch_metric_alarm" "api-ecs-cpu-scale-in" {
   threshold           = "${var.cloud_watch_si_threshold}"
 
   alarm_description   = "${var.cloud_watch_si_description}"
-  alarm_actions       = ["${aws_autoscaling_policy.api_ec2_ecs_asg_scale_in[count.index].arn}"]
+  alarm_actions       = ["${aws_autoscaling_policy.ec2_ecs_asg_scale_in[count.index].arn}"]
 }
 
 resource "aws_cloudwatch_metric_alarm" "api-ecs-cpu-scaleout" {
@@ -60,5 +60,5 @@ resource "aws_cloudwatch_metric_alarm" "api-ecs-cpu-scaleout" {
   threshold           = "${var.cloud_watch_so_threshold}"
 
   alarm_description   = "${var.cloud_watch_so_description}"
-  alarm_actions       = ["${aws_autoscaling_policy.api_ec2_ecs_asg_scale_out[count.index].arn}"]
+  alarm_actions       = ["${aws_autoscaling_policy.ec2_ecs_asg_scale_out[count.index].arn}"]
 }

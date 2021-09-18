@@ -8,6 +8,7 @@ module "asg" {
   instance_type           = "t2.xlarge"
   lb_prv_subnets          = ["10.0.0.144/28", "10.0.0.160/28", "10.0.0.176/28"]
   lb_subnet_ids           = ["subnet-***********","subnet-00cc***********","subnet-01f************"]
+  name_prefix             = "ec2-asg"
   userdata                = "userdata/userdata.sh" #data.template_file.user_data.rendered
   vpc_name                = "api-vpc"
   vpc_id                  = "vpc-**************"

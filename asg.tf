@@ -52,7 +52,7 @@ resource "aws_autoscaling_group" "api" {
   }
 }
 
-resource "aws_autoscaling_policy" "api_scale_out" {
+resource "aws_autoscaling_policy" "scale_out" {
   count                  = "${var.vpc_config.environment == var.vpc_config.environment ? 1 : 0}"
   name                   = "${replace(var.tags["Name"], "/", "-")}-scale-out"
   scaling_adjustment     = "1"
@@ -61,7 +61,7 @@ resource "aws_autoscaling_policy" "api_scale_out" {
   autoscaling_group_name = "${aws_autoscaling_group.api[count.index].name}"
 }
 
-resource "aws_autoscaling_policy" "api_scale_in" {
+resource "aws_autoscaling_policy" "scale_in" {
   count                  = "${var.vpc_config.environment == var.vpc_config.environment ? 1 : 0}"
   name                   = "${replace(var.tags["Name"], "/", "-")}-scale-in"
   scaling_adjustment     = "-1"
@@ -70,7 +70,7 @@ resource "aws_autoscaling_policy" "api_scale_in" {
   autoscaling_group_name = "${aws_autoscaling_group.api[count.index].name}"
 }
 
-resource "aws_autoscaling_policy" "api_ec2_ecs_asg_scale_out" {
+resource "aws_autoscaling_policy" "ec2_ecs_asg_scale_out" {
   count                  = "${var.vpc_config.environment == var.vpc_config.environment ? 1 : 0}"
   name                   = "${replace(var.tags["project"], "/", "-")}-scale-out"
   scaling_adjustment     = "1"
@@ -79,7 +79,7 @@ resource "aws_autoscaling_policy" "api_ec2_ecs_asg_scale_out" {
   autoscaling_group_name = "${aws_autoscaling_group.api[count.index].name}"
 }
 
-resource "aws_autoscaling_policy" "api_ec2_ecs_asg_scale_in" {
+resource "aws_autoscaling_policy" "ec2_ecs_asg_scale_in" {
   count                  = "${var.vpc_config.environment == var.vpc_config.environment ? 1 : 0}"
   name                   = "${replace(var.tags["project"], "/", "-")}-scale-in"
   scaling_adjustment     = "-1"

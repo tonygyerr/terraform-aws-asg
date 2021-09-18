@@ -26,8 +26,6 @@ variable "asgmachine" {
   default = "asgmachine"
 }
 
-
-
 variable "ami" {
   type = string
   default = ""

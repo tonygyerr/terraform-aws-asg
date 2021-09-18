@@ -1,36 +1,36 @@
 variable "aws_key_name" {
-  type        = "string"
+  type        = string
   description = "aws key name"
   default     = ""
 }
 
 variable "lb_subnet_ids" {
   description = "list of subnet load balancer subnet ids"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
 variable "lb_prv_subnets" {
   description = "load balancer private subnets for the vpc"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
 variable "vpc_security_group_ids" {
   description = "list of security group ids"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map(string)
   description = "optional default tags"
 
   default = {}
 }
 
 variable "name_prefix" {
-  type = string
+  type    = string
   default = ""
 }
 
@@ -52,34 +52,34 @@ variable "app_name" {
 }
 
 variable "iam_instance_profile_name" {
-  type        = string
-  default     = ""
+  type    = string
+  default = ""
 }
 
 variable "vpc_id" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "instance_type" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "userdata" {
-  type        = string
-  default     = ""
+  type    = string
+  default = ""
 }
 
 variable "associate_public_ip_address" {
   description = "Associate the Public IP Address"
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
 
 variable "ecs" {
   description = "(Required) map of variables for ECS"
-  type        = "map"
+  type        = map(string)
 
   default = {}
 }

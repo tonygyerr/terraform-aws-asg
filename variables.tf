@@ -1,33 +1,33 @@
 variable "aws_key_name" {
-  type        = "string"
+  type        = string
   description = "aws key name"
   default     = ""
 }
 
 variable "lb_name" {
-  type        = "string"
+  type        = string
   description = "load balancer name"
   default     = "api-pub-alb"
 }
 
 variable "lb_prv_subnets" {
   description = "load balancer private subnets for the vpc"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
 variable "name_prefix" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "asgmachine" {
-  type = string
+  type    = string
   default = "asgmachine"
 }
 
 variable "ami" {
-  type = string
+  type    = string
   default = ""
 }
 
@@ -37,7 +37,7 @@ variable "aws_region" {
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map(string)
   description = "optional default tags"
 
   default = {}
@@ -89,28 +89,28 @@ variable "ebs_device_name" {
 }
 
 variable "num_pub_subnets" {
-  type    = "string"
+  type    = string
   default = "3"
 }
 
 variable "num_prv_subnets" {
-  type    = "string"
+  type    = string
   default = "3"
 }
 
 variable "num_subnets" {
-  type    = "string"
+  type    = string
   default = "9"
 }
 
 variable "num_route_tables" {
-  type    = "string"
+  type    = string
   default = "9"
 }
 
 variable "ecs" {
   description = "(Required) map of variables for ECS"
-  type        = "map"
+  type        = map(string)
 
   default = {}
 }
@@ -122,8 +122,8 @@ variable "iam_database_authentication_enabled" {
 
 variable "associate_public_ip_address" {
   description = "Associate the Public IP Address"
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
 
 variable "vpc_security_group_ids" {
@@ -198,7 +198,7 @@ variable "reuse_nat_ips" {
 
 variable "external_nat_ip_ids" {
   description = "List of EIP IDs to be assigned to the NAT Gateways (used in combination with reuse_nat_ips)"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -220,10 +220,6 @@ variable "map_public_ip_on_launch" {
 variable "enable_vpn_gateway" {
   description = "Should be true if you want to create a new VPN Gateway resource and attach it to the VPC"
   default     = false
-}
-
-variable "cloud_watch_log_group_name" {
-  default = "api-web-cloud-watch-logs"
 }
 
 variable "cloud_watch_log_group_retention" {
@@ -294,10 +290,6 @@ variable "cloud_watch_ml_description" {
   default = "content delivery memory reservation above 60%"
 }
 
-variable "cloud_watch_so_alarm_name" {
-  default = "api-web-cpu-scaleout"
-}
-
 variable "cloud_watch_so_comparison_operator" {
   default = "GreaterThanOrEqualToThreshold"
 }
@@ -328,10 +320,6 @@ variable "cloud_watch_so_threshold" {
 
 variable "cloud_watch_so_description" {
   default = "content delivery memory reservation above 60%"
-}
-
-variable "cloud_watch_si_alarm_name" {
-  default = "api-web-cpu-scalein"
 }
 
 variable "cloud_watch_si_comparison_operator" {
@@ -367,9 +355,9 @@ variable "cloud_watch_si_description" {
 }
 
 variable "deploy_env_map" {
-  type = map
+  type = map(any)
   default = {
-    dev = "develop"
+    dev  = "develop"
     test = "test"
     prod = "prod"
   }
@@ -377,7 +365,7 @@ variable "deploy_env_map" {
 
 variable "lb_subnet_ids" {
   description = "list of load balancer subnet ids"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
@@ -393,21 +381,21 @@ variable "app_name" {
 }
 
 variable "iam_instance_profile_name" {
-  type        = string
-  default     = ""
+  type    = string
+  default = ""
 }
 
 variable "vpc_id" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "instance_type" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "userdata" {
-  type        = string
-  default     = ""
+  type    = string
+  default = ""
 }

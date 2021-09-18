@@ -28,3 +28,11 @@ vpc_config = {
   instance_type     = "t2.small"
   environment       = "dev"
 }
+
+#--------------------------------------------------------------
+# cloudwatch
+#--------------------------------------------------------------	
+
+cloud_watch_log_group_name =  "api-web-cloud-watch-logs"
+cloud_watch_so_alarm_name = "api-web-cpu-scaleout"
+cloud_watch_si_alarm_name = "api-web-cpu-scalein"

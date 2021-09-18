@@ -71,3 +71,10 @@ variable "associate_public_ip_address" {
   type = bool
   default = false
 }
+
+variable "ecs" {
+  description = "(Required) map of variables for ECS"
+  type        = "map"
+
+  default = {}
+}

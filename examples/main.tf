@@ -31,9 +31,9 @@ module "asg" {
   }
   tags = {
     Owner   = "my-app"
-    env     = "test"
+    env     = "dev"
     Region  = "us-east-1"
-    project = "brag"
+    project = "my-app"
     Name    = "my-app-asg"
   }
 }

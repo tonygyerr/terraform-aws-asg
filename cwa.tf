@@ -1,8 +1,3 @@
-resource "aws_cloudwatch_log_group" "flow_log" {
-  name              = "${var.app_name}-cw-flow-log"
-  retention_in_days = var.cloud_watch_log_group_retention
-}
-
 resource "aws_cloudwatch_metric_alarm" "ecs_memory_high" {
   count               = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
   alarm_name          = "${var.app_name}-cw-memory-reservation-high"
@@ -61,4 +56,10 @@ resource "aws_cloudwatch_metric_alarm" "api-ecs-cpu-scaleout" {
 
   alarm_description = var.cloud_watch_so_description
   alarm_actions     = ["${aws_autoscaling_policy.ec2_ecs_asg_scale_out[count.index].arn}"]
+}
+
+resource "aws_cloudwatch_log_group" "flow_log" {
+  count               = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
+  name  = "/${var.environment.prefix_name}/asg/${aws_autoscaling_group.api[count.index].name}-cw-flow-log"
+  retention_in_days = var.cloud_watch_log_group_retention
 }

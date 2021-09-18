@@ -4,17 +4,17 @@ variable "aws_key_name" {
   default     = ""
 }
 
-variable "lb_name" {
-  type        = string
-  description = "load balancer name"
-  default     = "api-pub-alb"
-}
+# variable "lb_name" {
+#   type        = string
+#   description = "load balancer name"
+#   default     = "api-pub-alb"
+# }
 
-variable "lb_prv_subnets" {
-  description = "load balancer private subnets for the vpc"
-  type        = list(string)
-  default     = []
-}
+# variable "lb_prv_subnets" {
+#   description = "load balancer private subnets for the vpc"
+#   type        = list(string)
+#   default     = []
+# }
 
 variable "name_prefix" {
   type    = string
@@ -43,10 +43,10 @@ variable "tags" {
   default = {}
 }
 
-variable "alb_is_internal" {
-  description = "determines if the alb is internal or not"
-  default     = "false"
-}
+# variable "alb_is_internal" {
+#   description = "determines if the alb is internal or not"
+#   default     = "false"
+# }
 
 variable "ebs_vol_name" {
   description = "name for ebs vol"

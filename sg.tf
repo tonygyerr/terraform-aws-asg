@@ -1,5 +1,5 @@
-resource "aws_security_group" "alb" {
-  name   = "api-alb-sg"
+resource "aws_security_group" "asg" {
+  name   = "${var.app_name}-asg-sg"
   vpc_id = var.vpc_config.vpc_id
 
   ingress {
@@ -21,9 +21,5 @@ resource "aws_security_group" "alb" {
     to_port     = 65535
     protocol    = "tcp"
     cidr_blocks = var.lb_prv_subnets
-  }
-
-  tags = {
-    Name = "${var.app_name}-alb-sg"
   }
 }

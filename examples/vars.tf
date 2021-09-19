@@ -83,3 +83,7 @@ variable "ecs" {
 
   default = {}
 }
+
+variable "node_status_check_file" {
+  type = string
+}

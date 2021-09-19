@@ -1,5 +1,13 @@
-output "autoscaling_group_id" {
+output "asg_id" {
   value = "${aws_autoscaling_group.api.*.id}"
+}
+
+output "asg_launch_configuration_id" {
+  value       = aws_launch_configuration.api.*.id
+}
+
+output "asg_name" {
+  value       = aws_autoscaling_group.api.*.name
 }
 
 output "cloudwatch_log_arn" {

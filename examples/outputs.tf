@@ -1,13 +1,17 @@
-output "autoscaling_group_id" {
-  value = module.asg.autoscaling_group_id
+output "asg_id" {
+  value = module.asg.asg_id
+}
+
+output "asg_launch_configuration_id" {
+  value  = module.asg.asg_launch_configuration_id
+}
+
+output "asg_name" {
+  value  = module.asg[count.index].asg_name
 }
 
 output "cloudwatch_log_arn" {
   value = module.asg.cloudwatch_log_arn
-}
-
-output "asg_sg_id" {
-  value = module.asg.asg_sg_id
 }
 
 output "asg_cloudwatch_metric_alarm_memory_high" {

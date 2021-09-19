@@ -1,5 +1,6 @@
 module "asg" {
-  source = "git::https://github.com/tonygyerr/terraform-aws-asg.git"
+  # source = "git::https://github.com/tonygyerr/terraform-aws-asg.git"
+  source = "../"
 
   app_name                    = "my-app-name"
   ami                         = "ami-0742b4e673072066f"

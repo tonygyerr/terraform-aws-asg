@@ -11,22 +11,6 @@ data "aws_iam_policy_document" "ecs_assume_role" {
   }
 }
 
-# data "aws_iam_policy_document" "ecr" {
-#   statement {
-#     sid = "AllowECRPullByECS"
-
-#     actions = [
-#       "ecr:GetAuthorizationToken",
-#       "ecr:BatchCheckLayerAvailability",
-#       "ecr:GetDownloadUrlForLayer",
-#       "ecr:BatchGetImage",
-#     ]
-#   }
-
-#   # optionally enable ECR policies, if var.ecr_repositories is a non-empty list
-#   count = "${signum(length(var.ecr_repositories))}"
-# }
-
 data "aws_iam_policy_document" "vpc_flow_assume" {
   statement {
     sid     = ""

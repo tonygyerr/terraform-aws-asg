@@ -9,6 +9,7 @@ iam_instance_profile_name   = "SSM-EC2-Instance-Profile"
 lb_subnet_ids               = ["subnet-************","subnet-************"]
 lb_prv_subnets              = ["10.0.0.144/28", "10.0.0.160/28", "10.0.0.176/28"]
 userdata                    = "userdata/userdata.sh"
+node_status_check_file      = "userdata/instance_id.sh"
 vpc_name                    = "api-vpc"
 name_prefix                 = "ec2-asg"
 ecs = {

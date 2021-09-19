@@ -46,6 +46,26 @@ resource "aws_autoscaling_group" "api" {
     value               = format("%s${var.app_name}-asg", local.name_prefix) #"${var.app_name}-ec2-asg-${count.index}"
     propagate_at_launch = true
   }
+  tag {
+    key                 = "Owner"
+    value               = var.tag.Owner
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "Env"
+    value               = var.tag.env
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "Region"
+    value               = var.tag.Region
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "project"
+    value               = var.tag.project
+    propagate_at_launch = true
+  }
 
   lifecycle {
     create_before_destroy = true

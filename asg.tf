@@ -48,22 +48,22 @@ resource "aws_autoscaling_group" "api" {
   }
   tag {
     key                 = "Owner"
-    value               = var.tag.Owner
+    value               = var.tags.Owner
     propagate_at_launch = true
   }
   tag {
     key                 = "Env"
-    value               = var.tag.env
+    value               = var.tags.env
     propagate_at_launch = true
   }
   tag {
     key                 = "Region"
-    value               = var.tag.Region
+    value               = var.tags.Region
     propagate_at_launch = true
   }
   tag {
     key                 = "project"
-    value               = var.tag.project
+    value               = var.tags.project
     propagate_at_launch = true
   }
 

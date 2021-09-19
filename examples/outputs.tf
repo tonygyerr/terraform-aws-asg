@@ -1,3 +1,7 @@
+output "autoscaling_group_id" {
+  value = module.asg.autoscaling_group_id
+}
+
 output "cloudwatch_log_arn" {
   value = module.asg.cloudwatch_log_arn
 }

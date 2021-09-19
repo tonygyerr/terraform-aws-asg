@@ -1,3 +1,7 @@
+output "autoscaling_group_id" {
+  value = "${aws_autoscaling_group.api.*.id}"
+}
+
 output "cloudwatch_log_arn" {
   value = "${aws_cloudwatch_log_group.flow_log.*.arn}"
 }

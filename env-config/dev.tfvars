@@ -29,6 +29,13 @@ vpc_config = {
   environment       = "dev"
 }
 
+tags = {
+  Owner   = "my-app"
+  env     = "test"
+  Region  = "us-east-1"
+  project = "my-app"
+  Name    = "my-app-asg"
+}
 #--------------------------------------------------------------
 # cloudwatch
 #--------------------------------------------------------------	

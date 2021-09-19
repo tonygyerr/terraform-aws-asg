@@ -7,4 +7,4 @@ resource "null_resource" "asg" {
     }
     command = file(var.node_status_check_file)
   }
-}
+} 

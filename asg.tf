@@ -39,7 +39,7 @@ resource "aws_autoscaling_group" "api" {
   health_check_type         = var.ecs["health_check_type"]
   min_size                  = var.ecs["min_size"]
   max_size                  = var.ecs["max_size"]
-  depends_on                = ["aws_launch_configuration.api"]
+  # depends_on                = ["aws_launch_configuration.api"]
 
   tag {
     key                 = "Name"

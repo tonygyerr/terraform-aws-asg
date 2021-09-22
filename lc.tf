@@ -2,8 +2,6 @@ resource "random_id" "asg" {
   byte_length = 20 * 3 / 4
 }
 
-  secret_string = random_id.rds.b64_std
-
 resource "aws_launch_configuration" "api" {
   count                       = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
   name                        = "${var.app_name}-aslc-${random_id.asg.id}"

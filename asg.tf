@@ -76,35 +76,3 @@ resource "aws_autoscaling_policy" "ec2_ecs_asg_scale_in" {
   cooldown               = "300"
   autoscaling_group_name = aws_autoscaling_group.api[count.index].name
 }
-
-# data "aws_vpc" "this" {
-#   filter {
-#     name   = "tag:Name"
-#     values = [var.vpc_name]
-#   }
-# }
-
-# data "aws_instance" "server" {
-#   instance_id = var.instance_id_1
-
-#   filter {
-#     name   = "tag:aws:autoscaling:groupName"
-#     values = [var.asg_name]
-#   }
-#   filter {
-#     name   = "tag:Name"
-#     values = [var.asg_name]
-#   }
-# }
-
-# resource "aws_alb_target_group_attachment" "http" {
-#   target_group_arn       = aws_lb_target_group.http.arn
-#   target_id              = data.aws_instance.server.id #var.vpc_config.instance_id
-#   port                   = 80
-# }
-
-# resource "aws_alb_target_group_attachment" "https" {
-#   target_group_arn       = aws_lb_target_group.https.arn
-#   target_id              = data.aws_instance.server.id #var.vpc_config.instance_id
-#   port                   = 443
-# }

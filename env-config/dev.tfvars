@@ -11,6 +11,7 @@ lb_prv_subnets              = ["10.0.0.144/28", "10.0.0.160/28", "10.0.0.176/28"
 userdata                    = "userdata/userdata.sh"
 node_status_check_file      = "userdata/instance_id.sh"
 vpc_name                    = "api-vpc"
+# vpc_security_group_ids      = ""
 name_prefix                 = "ec2-asg"
 ecs = {
   instance_type    = "t2.micro"

@@ -409,3 +409,9 @@ variable "userdata" {
 variable "node_status_check_file" {
   type = string
 }
+
+variable "open_cidr" {
+  description = "vpc cidr for subnet"
+  type        = string
+  default     = "0.0.0.0/0"
+}

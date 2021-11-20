@@ -6,7 +6,8 @@ module "asg" {
   associate_public_ip_address = true
   aws_key_name                = "my-app-key-app-server"
   instance_type               = "t2.xlarge"
-  lb_subnet_ids               = ["subnet-***********", "subnet-00cc***********", "subnet-01f************"]
+  subnet_ids                  = ["subnet-***********", "subnet-00cc***********", "subnet-01f************"]
+  private_subnets             = ["10.0.0.X/28", "10.0.0.X/28", "10.0.0.X/28", "10.0.0.X/28", "10.0.0.X/28", "10.0.0.X/28"] #ASG will need access to private application and database subnets
   name_prefix                 = "ec2-asg"
   node_status_check_file      = "install/node_status_check.sh"
   userdata                    = "userdata/userdata.sh" #data.template_file.user_data.rendered

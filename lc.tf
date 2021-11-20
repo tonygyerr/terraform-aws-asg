@@ -10,7 +10,7 @@ resource "aws_launch_configuration" "api" {
   iam_instance_profile        = var.iam_instance_profile_name
   key_name                    = var.aws_key_name
   security_groups             = ["${aws_security_group.asg.id}", "${var.vpc_security_group_ids}"]
-  user_data                   = var.userdata
+  user_data                   = var.userdata 
   associate_public_ip_address = var.associate_public_ip_address
   enable_monitoring           = true
   ebs_optimized               = false

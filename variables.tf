@@ -10,8 +10,8 @@ variable "aws_key_name" {
 #   default     = "api-pub-alb"
 # }
 
-variable "lb_prv_subnets" {
-  description = "load balancer private subnets for the vpc"
+variable "private_subnets" {
+  description = "private subnets for the application and database layer"
   type        = list(string)
   default     = []
 }
@@ -369,7 +369,7 @@ variable "deploy_env_map" {
   }
 }
 
-variable "lb_subnet_ids" {
+variable "subnet_ids" {
   description = "list of load balancer subnet ids"
   type        = list(any)
   default     = []

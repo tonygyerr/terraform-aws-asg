@@ -4,14 +4,14 @@ variable "aws_key_name" {
   default     = ""
 }
 
-variable "lb_subnet_ids" {
+variable "subnet_ids" {
   description = "list of subnet load balancer subnet ids"
   type        = list(any)
   default     = []
 }
 
-variable "lb_prv_subnets" {
-  description = "load balancer private subnets for the vpc"
+variable "private_subnets" {
+  description = "list of private subnets for application and database layer"
   type        = list(string)
   default     = []
 }

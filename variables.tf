@@ -16,11 +16,11 @@ variable "private_subnets" {
   default     = []
 }
 
-variable "lb_pub_subnets" {
-  description = "load balancer public subnets for the vpc"
-  type        = list(string)
-  default     = []
-}
+# variable "lb_pub_subnets" {
+#   description = "load balancer public subnets for the vpc"
+#   type        = list(string)
+#   default     = []
+# }
 
 variable "name_prefix" {
   type    = string
@@ -49,10 +49,10 @@ variable "tags" {
   default = {}
 }
 
-# variable "alb_is_internal" {
-#   description = "determines if the alb is internal or not"
-#   default     = "false"
-# }
+variable "alb_is_internal" {
+  description = "determines if the alb is internal or not"
+  default     = "false"
+}
 
 variable "ebs_vol_name" {
   description = "name for ebs vol"

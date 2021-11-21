@@ -17,6 +17,20 @@ resource "aws_security_group" "asg" {
   }
 
   ingress {
+    from_port   = 8000
+    to_port     = 8000
+    protocol    = "tcp"
+    cidr_blocks = var.private_subnets #application and database subnets
+  }
+
+  ingress {
+    from_port   = 9324 #sqs
+    to_port     = 9324
+    protocol    = "tcp"
+    cidr_blocks = var.private_subnets #application and database subnets
+  }
+
+  ingress {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"

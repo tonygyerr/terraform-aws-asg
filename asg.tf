@@ -43,7 +43,7 @@ resource "aws_autoscaling_group" "api" {
 
 resource "aws_autoscaling_policy" "scale_out" {
   count                  = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
-  name                   = "${replace(var.tags["Name"], "/", "-")}-scale-out"
+  name                   = "${replace(var.app_name, "/", "-")}-scale-out"
   scaling_adjustment     = "1"
   adjustment_type        = "ChangeInCapacity"
   cooldown               = "300"
@@ -52,7 +52,7 @@ resource "aws_autoscaling_policy" "scale_out" {
 
 resource "aws_autoscaling_policy" "scale_in" {
   count                  = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
-  name                   = "${replace(var.tags["Name"], "/", "-")}-scale-in"
+  name                   = "${replace(var.app_name, "/", "-")}-scale-in"
   scaling_adjustment     = "-1"
   adjustment_type        = "ChangeInCapacity"
   cooldown               = "300"

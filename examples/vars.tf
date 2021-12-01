@@ -86,4 +86,15 @@ variable "ecs" {
 
 variable "node_status_check_file" {
   type = string
+  default = ""
+}
+
+variable "node_cron_primary_file" {
+  type = string
+  default = ""
+}
+
+variable "node_cron_secondary_file" {
+  type = string
+  default = ""
 }

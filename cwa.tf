@@ -58,6 +58,21 @@ resource "aws_cloudwatch_metric_alarm" "api-ecs-cpu-scaleout" {
   alarm_actions     = ["${aws_autoscaling_policy.ec2_ecs_asg_scale_out[count.index].arn}"]
 }
 
+resource "aws_cloudwatch_metric_alarm" "sqs" {
+  count               = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
+  alarm_name          = "${var.app_name}-cw-sqs-message-1000-limit"
+  comparison_operator = var.cloud_watch_sqs_comparison_operator
+  evaluation_periods  = var.cloud_watch_sqs_evaluation_periods
+  metric_name         = var.cloud_watch_sqs_metric_name
+  namespace           = var.cloud_watch_sqs_namespace
+  period              = var.cloud_watch_sqs_period
+  statistic           = var.cloud_watch_sqs_statistic
+  threshold           = var.cloud_watch_sqs_threshold
+
+  alarm_description = var.cloud_watch_sqs_description
+  alarm_actions     = ["${aws_autoscaling_policy.ec2_ecs_asg_scale_out[count.index].arn}"]
+}
+
 resource "aws_cloudwatch_log_group" "flow_log" {
   count               = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
   name  = "/aws/asg/${aws_autoscaling_group.api[count.index].name}-cw-flow-log"

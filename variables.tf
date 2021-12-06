@@ -244,6 +244,42 @@ variable "cloud_watch_mh_metric_name" {
   default = "MemoryReservation"
 }
 
+variable "cloud_watch_sqs_metric_name" {
+  default = "ApproximateNumberOfMessagesVisible"
+}
+###
+variable "cloud_watch_sqs_comparison_operator" {
+  default = "GreaterThanOrEqualToThreshold"
+}
+
+variable "cloud_watch_sqs_evaluation_periods" {
+  default = "1"
+}
+
+variable "cloud_watch_sqs_metric_name" {
+  default = "CPUUtilization"
+}
+
+variable "cloud_watch_sqs_namespace" {
+  default = "AWS/SQS"
+}
+
+variable "cloud_watch_sqs_period" {
+  default = "300"
+}
+
+variable "cloud_watch_sqs_statistic" {
+  default = "SampleCount"
+}
+
+variable "cloud_watch_sqs_threshold" {
+  default = "60.0"
+}
+
+variable "cloud_watch_sqs_description" {
+  default = "SQS Cloudwatch Metric"
+}
+
 variable "cloud_watch_mh_namespace" {
   default = "AWS/WEB"
 }

@@ -256,10 +256,6 @@ variable "cloud_watch_sqs_evaluation_periods" {
   default = "1"
 }
 
-variable "cloud_watch_sqs_metric_name" {
-  default = "CPUUtilization"
-}
-
 variable "cloud_watch_sqs_namespace" {
   default = "AWS/SQS"
 }

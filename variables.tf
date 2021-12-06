@@ -452,6 +452,17 @@ variable "node_cron_secondary_file" {
   type = string
   default = ""
 }
+
+variable "node_celery_primary_file" {
+  type = string
+  default = ""
+}
+
+variable "node_celery_secondary_file" {
+  type = string
+  default = ""
+}
+
 variable "open_cidr" {
   description = "vpc cidr for subnet"
   type        = string

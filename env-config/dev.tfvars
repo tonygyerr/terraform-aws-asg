@@ -4,6 +4,7 @@
 
 app_name                    = "my-asg-application"
 aws_key_name                = "my-pem-name"
+associate_public_ip_address = "false" # set to true if you want a public ip address associated with your instance.
 ami                         = "ami-************"
 iam_instance_profile_name   = "SSM-EC2-Instance-Profile"
 lb_subnet_ids               = ["subnet-************","subnet-************"]

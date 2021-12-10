@@ -3,7 +3,7 @@ module "asg" {
 
   app_name                    = "my-app-name"
   ami                         = "ami-0742b4e673072066f"
-  associate_public_ip_address = true
+  associate_public_ip_address = false #set to true of your instance needs a public ip address
   aws_key_name                = "my-app-key-app-server"
   instance_type               = "t2.xlarge"
   subnet_ids                  = ["subnet-***********", "subnet-00cc***********", "subnet-01f************"]

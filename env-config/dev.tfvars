@@ -7,7 +7,10 @@ aws_key_name                = "my-pem-name"
 ami                         = "ami-************"
 iam_instance_profile_name   = "SSM-EC2-Instance-Profile"
 lb_subnet_ids               = ["subnet-************","subnet-************"]
+# subnet_ids               = ["subnet-************","subnet-************"]
 lb_prv_subnets              = ["10.0.0.144/28", "10.0.0.160/28", "10.0.0.176/28"]
+# private_subnets           = ["10.0.0.48/28", "10.0.0.64/28", "10.0.0.80/28", "10.0.0.96/28", "10.0.0.112/28", "10.0.0.128/28"] #ASG will need access to private application and database subnets
+
 userdata                    = "userdata/userdata.sh"
 node_status_check_file      = "userdata/instance_id.sh"
 vpc_name                    = "api-vpc"

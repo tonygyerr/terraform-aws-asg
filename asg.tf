@@ -1,6 +1,6 @@
 resource "aws_autoscaling_group" "api" {
   count                     = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
-  name                      = format("%s${var.app_name}-asg", local.name_prefix) #"${var.app_name}-ec2-asg-${count.index}"
+  name                      = "${var.app_name}-ec2-asg-${count.index}"
   vpc_zone_identifier       = var.subnet_ids
   launch_configuration      = aws_launch_configuration.api.*.name[count.index]
   desired_capacity          = var.ecs["desired_capacity"]
@@ -12,7 +12,7 @@ resource "aws_autoscaling_group" "api" {
 
   tag {
     key                 = "Name"
-    value               = format("%s${var.app_name}-asg-${count.index}", local.name_prefix) #"${var.app_name}-ec2-asg-${count.index}"
+    value               = "${var.app_name}-ec2-asg-${count.index}"
     propagate_at_launch = true
   }
   tag {

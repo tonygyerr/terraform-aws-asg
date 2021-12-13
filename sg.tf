@@ -17,13 +17,6 @@ resource "aws_security_group" "asg" {
   }
 
   ingress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = [var.vpc_config.cidr] #application and database subnets
-  }
-
-  ingress {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"

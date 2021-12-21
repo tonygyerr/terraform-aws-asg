@@ -13,7 +13,7 @@ module "asg" {
   userdata                    = "userdata/userdata.sh" #data.template_file.user_data.rendered
   vpc_name                    = "api-vpc"
   vpc_id                      = "vpc-**************"
-  vpc_security_group_ids      = [module.asg.asg_sg_id] #var.vpc_security_group_ids
+  vpc_security_group_ids      = [var.vpc_security_group_ids] # use application load balancer security group id
   ecs = {
     instance_type             = "t2.micro"
     min_size                  = 3

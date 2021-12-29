@@ -5,11 +5,13 @@ module "asg" {
   ami                         = "ami-0742b4e673072066f"
   associate_public_ip_address = false #set to true of your instance needs a public ip address
   aws_key_name                = "my-app-key-app-server"
+  aws_region                  = "us-east-1"
   instance_type               = "t2.xlarge"
   subnet_ids                  = ["subnet-***********", "subnet-00cc***********", "subnet-01f************"]
   private_subnets             = ["10.0.0.X/28", "10.0.0.X/28", "10.0.0.X/28", "10.0.0.X/28", "10.0.0.X/28", "10.0.0.X/28"] #ASG will need access to private application and database subnets
   name_prefix                 = "ec2-asg"
   node_status_check_file      = "install/node_status_check.sh"
+  profile                     = "default"
   userdata                    = "userdata/userdata.sh" #data.template_file.user_data.rendered
   vpc_name                    = "api-vpc"
   vpc_id                      = "vpc-**************"

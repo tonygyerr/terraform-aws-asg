@@ -468,3 +468,15 @@ variable "open_cidr" {
   type        = string
   default     = "0.0.0.0/0"
 }
+
+variable "aws_region" {
+  description = "ec2 region for the vpc"
+  type        = string
+  default     = ""
+}
+
+variable "profile" {
+  description = "The name of the aws profile"
+  type        = string
+  default     = ""
+}

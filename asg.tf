@@ -1,6 +1,6 @@
 resource "aws_autoscaling_group" "api" {
   count                     = var.vpc_config.environment == var.vpc_config.environment ? 1 : 0
-  name                      = format("%s${var.app_name}-asg")
+  name                      = "${var.app_name}-asg"
   vpc_zone_identifier       = var.subnet_ids
   launch_configuration      = aws_launch_configuration.api.*.name[count.index]
   desired_capacity          = var.ecs["desired_capacity"]

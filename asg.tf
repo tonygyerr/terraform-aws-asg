@@ -12,7 +12,7 @@ resource "aws_autoscaling_group" "api" {
 
   tag {
     key                 = "Name"
-    value               = format("%s${var.app_name}-asg") #"${var.app_name}-ec2-asg-${count.index}"
+    value               = "${var.app_name}-asg"
     propagate_at_launch = true
   }
   tag {

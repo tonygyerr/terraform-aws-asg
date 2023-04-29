@@ -474,3 +474,13 @@ variable "profile" {
   type        = string
   default     = ""
 }
+
+variable "node_websockets_primary_file" {
+  type    = string
+  default = ""
+}
+
+variable "node_websockets_secondary_file" {
+  type    = string
+  default = ""
+}
